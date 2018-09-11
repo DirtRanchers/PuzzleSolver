@@ -12,18 +12,14 @@ namespace PuzzleSolver
         {
             this.attributes = attributes;
             clues = clues.ToArray();
-            InitializeLayout();
-            layout = layout.FindSolution(clues);
-        }
-
-        private void InitializeLayout()
-        {
-
+            initialLayout = new Layout(attributes, clues);
+            solution = initialLayout.FindSolution(clues);
         }
 
         private Clue[] clues;
         private Attributes attributes;
-        private Layout layout;
+        private Layout initialLayout;
+        private Layout solution;
 
 
     }
